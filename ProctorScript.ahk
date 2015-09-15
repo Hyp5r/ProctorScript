@@ -2,9 +2,9 @@
 ------------------------------------------------------------------
 
 AHK VERSION:	Lexikos 1.1.22.00 Unicode 32-bit
-AUTHOR:			William Quinn
-TITLE:			TCAT-M "Proctor" Launcher
-UUID:			c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
+AUTHOR:		William Quinn
+TITLE:		ProctorScript
+UUID:		c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
 
 ------------------------------------------------------------------
 */
