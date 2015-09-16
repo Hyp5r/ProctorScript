@@ -1,8 +1,8 @@
 /*
 ------------------------------------------------------------------
 
-AHK VERSION:	Lexikos 1.1.22.00 Unicode 32-bit
-AUTHOR:		William Quinn
+AHK VERSION:	Lexikos 1.1.22.03 Unicode 32-bit
+AUTHOR:		William Quinn (wquinn@outlook.com)
 TITLE:		ProctorScript
 UUID:		c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
 
@@ -28,7 +28,7 @@ FormatTime,Time,,h:mm:ss tt
 ; It's generally not needed to alter these.
 ; ----------------------------------------------------------------
 Version		=	Rev.6 Private Test
-Install		=	%A_WinDir%\..\c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
+Install		=	%A_MyDocuments%\c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
 INI		=	%A_ScriptDir%\setup.ini
 INI_Error1	=	Unfortunately`, there's something wrong with the INI file.`n`nIn this instance`, something is wrong with one of the 'Enable' variables.  Please make sure all 'Enable' variables equal 0 or 1.
 INI_Error2	=	Unfortunately`, there's something wrong with the INI file.`n`nIn this instance`, something is wrong with one of the 'Logoff' variables.  Please make sure all 'Logoff' variables equal 0 or 1.
@@ -42,8 +42,6 @@ INI_Error4	=	Unfortunately`, there's something wrong with the INI file.`n`nIn th
 Install_Temp:
 {
 FileCreateDir,%Install%
-	FileCreateDir,%Install%\app
-		FileInstall,app\qres.exe,%Install%\app\qres.exe,1
 	FileCreateDir,%Install%\img
 		FileInstall,img\0-000.png,%Install%\img\0-000.png,1
 		FileInstall,img\1-000.png,%Install%\img\1-000.png,1
@@ -625,14 +623,23 @@ ACT_Compass:
 		MsgBox,4112,Error,ACT Compass wasn't found.  Please check the INI file and make sure the location is correct.
 		Gosub,Exit
 	}
+	; Install QRes
+	FileCreateDir,%Install%\app
+	FileInstall,app\qres.exe,%Install%\app\qres.exe,1
+
+	; First Resolution Change
 	RunWait,%Install%\app\qres.exe /x:%ACT_CompassXRes% /y:%ACT_CompassYRes%
 	Sleep,2500
+
+	; Run Application
 	RunWait,%ACT_LockdownBrowser%,,UseErrorLevel
 	If ErrorLevel = ERROR
 	{
 		MsgBox,4112,ACT Compass,An unexpected error occurred when launching the Lockdown Browser.  Please contact your system administrator.
 		Gosub,Exit
 	}
+
+	; Second Resolution Change
 	RunWait,%Install%\app\qres.exe /x:%ACT_OriginalXRes% /y:%ACT_OriginalYRes%
 	Sleep,2500
 	If ACTCompassForceLogoff=1
