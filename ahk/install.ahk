@@ -1,10 +1,12 @@
 ; FILE INSTALLATIONS
 ; Files are copied to the user's Documents folder, within the UUID folder listed at the top.
 FileCreateDir,%Install%
+  FileInstall,README.md,README.md,1
   FileCreateDir,%Install%\bin
     FileInstall,bin\qres.exe,%Install%\bin\qres.exe,1
     FileInstall,bin\qres.htm,%Install%\bin\qres.htm,1
   FileCreateDir,%Install%\ahk
+    FileInstall,ahk\actcompass.ahk,%Install%\ahk\actcompass.ahk,1
     FileInstall,ahk\cmd.ahk,%Install%\ahk\cmd.ahk,1
     FileInstall,ahk\consent.ahk,%Install%\ahk\consent.ahk,1
     FileInstall,ahk\install.ahk,%Install%\ahk\install.ahk,1
