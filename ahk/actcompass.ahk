@@ -4,7 +4,7 @@
 		Gosub,Log
 		FileAppend,ACT Compass`,`n,%LogFile%
 	}
-	IfNotExist,%ACT_ConsentBrowser%
+	IfNotExist,%ACT_LockdownBrowser%
 	{
 		MsgBox,4112,Error,ACT Compass wasn't found.  Please check the INI file and make sure the location is correct.
 		Gosub,Exit
@@ -14,10 +14,10 @@
 	Sleep,2500
 
 	; Run Application
-	RunWait,%ACT_ConsentBrowser%,,UseErrorLevel
+	RunWait,%ACT_LockdownBrowser%,,UseErrorLevel
 	If ErrorLevel = ERROR
 	{
-		MsgBox,4112,ACT Compass,An unexpected error occurred when launching the Consent Browser.  Please contact your system administrator.
+		MsgBox,4112,ACT Compass,An unexpected error occurred when launching the Lockdown Browser.  Please contact your system administrator.
 		Gosub,Exit
 	}
 
