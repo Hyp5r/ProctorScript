@@ -1,4 +1,4 @@
-; AHK VERSION: Lexikos 1.1.22.03 Unicode 32-bit
+; AHK VERSION: Lexikos 1.1.22.06 Unicode 32-bit
 ; AUTHOR: William Quinn (wquinn@outlook.com)
 ; TITLE: ProctorScript
 ; UUID: c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
@@ -17,7 +17,7 @@ Launcher:
 	; Gui,ConsentBG:Destroy
 	Gui,Consent:Destroy
 	Gui,Launcher:Color,FFFFFF
-	Gui,Launcher:Add,StatusBar,,%LA_StatusBar%
+	Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
 	Gui,Launcher:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\1.png
 	Gui,Launcher:Add,Picture,X500 Y140 H256 W256,%Install%\img\3.png
 	Gui,Launcher:Font,cWhite s26,Calibri Light
@@ -328,3 +328,6 @@ ExitApp
 	Gui,ACTCompassOverride:Destroy
 	Gosub,ACT_Compass
 }
+
+; Hotkeys Disabled
+!Tab::return
