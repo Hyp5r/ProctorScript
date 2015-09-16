@@ -24,6 +24,6 @@
 	; Second Resolution Change
 	RunWait,%Install%\app\qres.exe /x:%ACT_OriginalXRes% /y:%ACT_OriginalYRes%
 	Sleep,2500
-	If ACTCompassForceLogoff=1
+	If ACT_Logoff=1
 		Gosub,Logoff
 	Gosub,Exit
