@@ -133,7 +133,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option2Title%`,`n,%LogFile%
 			}
 			RunWait %LA_Option2Link%
 			If Option2Logoff=1
@@ -151,7 +151,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option3Title%`,`n,%LogFile%
 			}
 			RunWait %LA_Option3Link%
 			If Option3Logoff=1
@@ -169,7 +169,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option4Title%`,`n,%LogFile%
 			}
 			RunWait %LA_Option4Link%
 			If Option4Logoff=1
@@ -187,7 +187,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option5Title%`,`n,%LogFile%
 			}
 			RunWait %LA_Option5Link%
 			If Option5Logoff=1
@@ -205,7 +205,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option6Title%`,`n,%LogFile%
 			}
 			RunWait %LA_Option6Link%
 			If Option6Logoff=1
@@ -223,7 +223,7 @@ Submit:
 			If EnableLog=1
 			{
 				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
+				FileAppend,%LA_Option7Title%`,`n,%LogFile%
 			}
 			RunWait,%LA_Option7Link%,,UseErrorLevel
 			If ErrorLevel=ERROR
