@@ -3,40 +3,41 @@
 ; TITLE: ProctorScript
 ; UUID: c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
 
-#Include ahk\var.ahk ; Defines all variables
-#Include ahk\install.ahk ; Installs all files
-#Include ahk\cmd.ahk ; Adds command-line switches
-#Include ahk\consent.ahk ; Similar to Windows UAC, shows INI variables
+; Initialization Scripts
+#Include ahk\var.ahk ; Defines all variables.
+#Include ahk\install.ahk ; Installs all files.
+#Include ahk\cmd.ahk ; Adds command-line switches.
+#Include ahk\consent.ahk ; Similar to Windows UAC, shows INI variables.
 
+; Show icon in system tray, disable tray menu.
 Menu,Tray,NoStandard
 
-Launcher:
-{
-	If EnableLog=1
-		FileAppend,1`,,%LogFile%
-	Gui,Consent:Destroy
-	Gui,Launcher:Color,FFFFFF
-	Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
-	Gui,Launcher:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\1.png
-	Gui,Launcher:Add,Picture,X500 Y140 H256 W256,%Install%\img\3.png
-	Gui,Launcher:Font,cWhite s26,Calibri Light
-	Gui,Launcher:Add,Text,X32 Y18 +BackgroundTrans,%LA_Title%
-	Gui,Launcher:Font,CBlack s12,Segoe UI
-	Gui,Launcher:Add,Edit,X32 Y370 W200 vFirstName,
-	Gui,Launcher:Add,Edit,X242 Y370 W200 vLastName,
-	Gui,Launcher:Add,Radio,X32 Y96 -Wrap vOption1,%LA_Option1Title%
-	Gui,Launcher:Add,Radio,X32 Y128 -Wrap vOption2,%LA_Option2Title%
-	Gui,Launcher:Add,Radio,X32 Y160 -Wrap vOption3,%LA_Option3Title%
-	Gui,Launcher:Add,Radio,X32 Y192 -Wrap vOption4,%LA_Option4Title%
-	Gui,Launcher:Add,Radio,X32 Y224 -Wrap vOption5,%LA_Option5Title%
-	Gui,Launcher:Add,Radio,X32 Y256 -Wrap vOption6,%LA_Option6Title%
-	Gui,Launcher:Add,Radio,X32 Y288 -Wrap vOption7,%LA_Option7Title%
-	Gui,Launcher:Add,Button,X32 Y410 Default gSubmit,Let's Go!
-	Gui,Launcher:Font,CBlack s10 Bold,Segoe UI
-	Gui,Launcher:Add,Text,X32 Y350,First Name
-	Gui,Launcher:Add,Text,X242 Y350,Last Name
-	Gui,Launcher:Show,H480 W800,%Title%
-	Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
+Launcher: 
+{ If EnableLog=1
+    FileAppend,1`,,%LogFile%
+  Gui,Consent:Destroy
+  Gui,Launcher:Color,FFFFFF
+  Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
+  Gui,Launcher:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\1.png
+  Gui,Launcher:Add,Picture,X500 Y140 H256 W256,%Install%\img\3.png
+  Gui,Launcher:Font,cWhite s26,Calibri Light
+  Gui,Launcher:Add,Text,X32 Y18 +BackgroundTrans,%LA_Title%
+  Gui,Launcher:Font,CBlack s12,Segoe UI
+  Gui,Launcher:Add,Edit,X32 Y370 W200 vFirstName,
+  Gui,Launcher:Add,Edit,X242 Y370 W200 vLastName,
+  Gui,Launcher:Add,Radio,X32 Y96 -Wrap vOption1,%LA_Option1Title%
+  Gui,Launcher:Add,Radio,X32 Y128 -Wrap vOption2,%LA_Option2Title%
+  Gui,Launcher:Add,Radio,X32 Y160 -Wrap vOption3,%LA_Option3Title%
+  Gui,Launcher:Add,Radio,X32 Y192 -Wrap vOption4,%LA_Option4Title%
+  Gui,Launcher:Add,Radio,X32 Y224 -Wrap vOption5,%LA_Option5Title%
+  Gui,Launcher:Add,Radio,X32 Y256 -Wrap vOption6,%LA_Option6Title%
+  Gui,Launcher:Add,Radio,X32 Y288 -Wrap vOption7,%LA_Option7Title%
+  Gui,Launcher:Add,Button,X32 Y410 Default gSubmit,Let's Go!
+  Gui,Launcher:Font,CBlack s10 Bold,Segoe UI
+  Gui,Launcher:Add,Text,X32 Y350,First Name
+  Gui,Launcher:Add,Text,X242 Y350,Last Name
+  Gui,Launcher:Show,H480 W800,%Title%
+  Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
 
 	If LA_Option1Enable=0
 		GuiControl,Launcher:Hide,Option1
@@ -234,25 +235,16 @@ Submit:
 	}
 }
 
-; DISAGREE
-; If the user doesn't agree, log them off of the machine.
 Disagree:
-{
-	Suspend,On
-	Gui,Consent:Destroy
-	MsgBox,4112,%Title%,You will be logged out of the system.
-	Goto,Exit
-}
-
-; SPECIAL FUNCTIONS
-; These are special commands that the launcher can take.
+{ Suspend,On
+  Gui,Consent:Destroy
+  MsgBox,4112,%Title%,You will be logged out of the system.
+  Goto,Exit
+  }
 
 ACT_Compass:
   #Include ahk\actcompass.ahk
 
-
-; EXIT
-; This is the exit function of the script.
 Log:
 {
 	FileAppend,%FirstName%`,%LastName%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
