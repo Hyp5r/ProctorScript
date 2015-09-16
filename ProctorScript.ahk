@@ -39,35 +39,35 @@ Launcher:
   Gui,Launcher:Show,H480 W800,%Title%
   Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
 
-	If LA_Option1Enable=0
-		GuiControl,Launcher:Hide,Option1
-		Else
-		Gui,Launcher:Add,Picture,X0 Y122 W300 H1,%Install%\img\2.png
-	If LA_Option2Enable=0
-		GuiControl,Launcher:Hide,Option2
-		Else
-		Gui,Launcher:Add,Picture,X0 Y154 W300 H1,%Install%\img\2.png
-	If LA_Option3Enable=0
-		GuiControl,Launcher:Hide,Option3
-		Else
-		Gui,Launcher:Add,Picture,X0 Y186 W300 H1,%Install%\img\2.png
-	If LA_Option4Enable=0
-		GuiControl,Launcher:Hide,Option4
-		Else
-		Gui,Launcher:Add,Picture,X0 Y218 W300 H1,%Install%\img\2.png
-	If LA_Option5Enable=0
-		GuiControl,Launcher:Hide,Option5
-		Else
-		Gui,Launcher:Add,Picture,X0 Y250 W300 H1,%Install%\img\2.png
-	If LA_Option6Enable=0
-		GuiControl,Launcher:Hide,Option6
-		Else
-		Gui,Launcher:Add,Picture,X0 Y282 W300 H1,%Install%\img\2.png
-	If LA_Option7Enable=0
-		GuiControl,Launcher:Hide,Option7
-		Else
-		Gui,Launcher:Add,Picture,X0 Y314 W300 H1,%Install%\img\2.png
-	Return
+If LA_Option1Enable=0
+  GuiControl,Launcher:Hide,Option1
+  Else
+  Gui,Launcher:Add,Picture,X0 Y122 W300 H1,%Install%\img\2.png
+If LA_Option2Enable=0
+  GuiControl,Launcher:Hide,Option2
+  Else
+  Gui,Launcher:Add,Picture,X0 Y154 W300 H1,%Install%\img\2.png
+If LA_Option3Enable=0
+  GuiControl,Launcher:Hide,Option3
+  Else
+  Gui,Launcher:Add,Picture,X0 Y186 W300 H1,%Install%\img\2.png
+If LA_Option4Enable=0
+  GuiControl,Launcher:Hide,Option4
+  Else
+  Gui,Launcher:Add,Picture,X0 Y218 W300 H1,%Install%\img\2.png
+If LA_Option5Enable=0
+  GuiControl,Launcher:Hide,Option5
+  Else
+  Gui,Launcher:Add,Picture,X0 Y250 W300 H1,%Install%\img\2.png
+If LA_Option6Enable=0
+  GuiControl,Launcher:Hide,Option6
+  Else
+  Gui,Launcher:Add,Picture,X0 Y282 W300 H1,%Install%\img\2.png
+If LA_Option7Enable=0
+  GuiControl,Launcher:Hide,Option7
+  Else
+  Gui,Launcher:Add,Picture,X0 Y314 W300 H1,%Install%\img\2.png
+Return
 }
 
 Submit:
@@ -260,35 +260,13 @@ Exit:
 	Gui,Consent:Destroy
 	Gui,Launcher:Destroy
 	FileRemoveDir,%Install%,1
-	Gosub,Close
+	ExitApp
 }
 
 Logoff:
 {
 	Gosub,Exit
 	Shutdown,0
-}
-
-Close:
-ExitApp
-
-^+C::
-{
-	Gui,Consent:Destroy
-	Gui,ConsentBG:Destroy
-	Gui,ACTCompassOverride:Color,FFFFFF
-	Gui,ACTCompassOverride:Font,s9,Segoe UI
-	Gui,ACTCompassOverride:Add,Progress,vACTCompassOverrideProgress w400 h3 c399AE7 Range0-125
-	Gui,ACTCompassOverride:Add,Text,,ACT Compass override activated.  Launching ACT Compass...
-	Gui,ACTCompassOverride:-Caption +AlwaysOnTop +Border
-	Gui,ACTCompassOverride:Show
-	Loop,125
-	{
-		GuiControl,ACTCompassOverride:,ACTCompassOverrideProgress,+1
-		Sleep,100
-	}
-	Gui,ACTCompassOverride:Destroy
-	Gosub,ACT_Compass
 }
 
 ; Hotkeys Disabled
