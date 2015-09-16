@@ -8,7 +8,7 @@ FormatTime,Time,,h:mm:ss tt
 
 ; Script Variables
 Install = %A_MyDocuments%\c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
-Version = Rev.8 (testing)
+Version = 1.0.0a
 
 ; INI Location
 INI = %A_ScriptDir%\setup.ini
