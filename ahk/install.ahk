@@ -23,7 +23,7 @@ FileCreateDir,%Install%
 IfNotExist,setup.ini
 {
 	FileInstall,setup.ini,setup.ini,1
-	MsgBox,4160,Missing INI File,Welcome to ProctorScript!  Since this seems to be your first time using the script, an INI file has been placed in the directory where you ran the script.  This INI contains everything that the program needs to run successfully.  If you need help using the script`,please email wquinn@tcatmurfreesboro.edu.  Thanks for trying it out!`n`nProctorScript %Version%.
+	MsgBox,4160,Welcome to ProctorScript!,Since this seems to be your first time using the script, an INI file has been placed in the directory where you ran the script.  This INI contains everything that the program needs to run successfully.  If you need help using the script`,please email wquinn@tcatmurfreesboro.edu.  Thanks for trying it out!`n`nProctorScript %Version%.
 	ExitApp
 }
 
