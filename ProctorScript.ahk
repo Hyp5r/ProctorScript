@@ -14,7 +14,6 @@ Launcher:
 {
 	If EnableLog=1
 		FileAppend,1`,,%LogFile%
-	; Gui,ConsentBG:Destroy
 	Gui,Consent:Destroy
 	Gui,Launcher:Color,FFFFFF
 	Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
