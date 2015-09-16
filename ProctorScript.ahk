@@ -37,7 +37,7 @@ Launcher:
 	Gui,Launcher:Add,Text,X32 Y350,First Name
 	Gui,Launcher:Add,Text,X242 Y350,Last Name
 	Gui,Launcher:Show,H480 W800,%Title%
-	Gui,Launcher:+AlwaysOnTop +Caption +Border -SysMenu
+	Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
 
 	If LA_Option1Enable=0
 		GuiControl,Launcher:Hide,Option1
@@ -281,7 +281,6 @@ Logoff:
 Close:
 ExitApp
 
-!F4::Gosub,Exit
 ^+C::
 {
 	Gui,Consent:Destroy
@@ -302,4 +301,5 @@ ExitApp
 }
 
 ; Hotkeys Disabled
+!F4::return
 !Tab::return
