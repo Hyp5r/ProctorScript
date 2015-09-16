@@ -1,6 +1,3 @@
-/*
-Switches have been disabled for the testing branch as a rewrite will mess these up!
-
 ; SWITCHES
 ; Command-line switches allowed with the script.
 
@@ -20,18 +17,15 @@ Loop, %0%
 		MsgBox,4160,Coming Soon!,The -help command is coming soon.  Sorry about that!
 		Gosub,Exit
 	}
-	If param = -skiplockdown
+	If param = -skipconsent
 	{
-		Gosub,Script_Read_Ini
-		Gosub,Script_Verify_Ini
+		Gosub,ConsentBG
 		Gosub,Launcher
 		Return
 	}
 	If param = -actcompass
 	{
-		Gosub,Script_Read_Ini
-		Gosub,Script_Verify_Ini
-		Gosub,^+C
+		Gosub,ACT_Compass
 		Return
 	}
 	Else
@@ -40,4 +34,3 @@ Loop, %0%
 		Gosub,Exit
 	}
 }
-*/
