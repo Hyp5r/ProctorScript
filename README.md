@@ -25,6 +25,7 @@ QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
 
 CHANGELOG
 =========
+```
 Rev.6 Private Test
 	MODIFY: The program now installs to the root of the Windows
 	directory, typically the C:\ drive.  This is due to group
@@ -67,3 +68,4 @@ Rev.2 Private Test
 
 Rev.1 Private Test
 	Initial Release
+```
