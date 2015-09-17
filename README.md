@@ -26,46 +26,28 @@ QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
 CHANGELOG
 =========
 ```
+
 Rev.6 Private Test
-	MODIFY: The program now installs to the root of the Windows
-	directory, typically the C:\ drive.  This is due to group
-	policy settings that disable execution in the AppData
-	directory.
-	MODIFY: The command line switches have been moved in the code
-	to execute after program installation again.  This will
-	(hopefully) fix the flashing window issue when using command
-	line switches in the program.
+  * MODIFY: The program now installs to the root of the Windows directory, typically the C:\ drive.  This is due to group	policy settings that disable execution in the AppData directory.
+  * MODIFY: The command line switches have been moved in the code to execute after program installation again.  This will (hopefully) fix the flashing window issue when using command line switches in the program.
 
 Rev.5 Private Test
-	ADD: Starting of the -help command switch, which will
+  + ADD: Starting of the -help command switch, which will
 	open a batch file with possible switches and uses.
-	MODIFY: Moved the switch coding to be ahead of the file
-	installation, and call file installation when a switch
-	explicitly needs it.  This prevents the -source command from
-	having two dumps, one into the script directory and one into
-	the %TEMP% directory.
-	*** This causes a currently known glitch, where using the
-	other switches will cause the lockdown section to flash
-	on screen before disappearing.
+  * MODIFY: Moved the switch coding to be ahead of the file installation, and call file installation when a switch explicitly needs it.  This prevents the -source command from having two dumps, one into the script directory and one into the %TEMP% directory.
+    ! This causes a currently known glitch, where using the other switches will cause the lockdown section to flash	on screen before disappearing.
 
 Rev.4 Private Test
-	ADD: -source command line switch, which dumps the source
-	code into the src folder.
+  + ADD: -source command line switch, which dumps the source code into the src folder.
 
 Rev.3 Private Test
-	ADD: Two new command-line switches have been added to the
-	program! -actcompass will automatically launch the ACT
-	Compass script, while -skiplockdown will completely bypass
-	the lockdown portion of the script.
-	MODIFY: Changed the order of file installation so that no
-	supporting files will be added unless the script detects
-	the INI file.
-	MODIFY: Made sure that change.log will always be updated
-	when the program is run.
+  + ADD: Two new command-line switches have been added to the program! -actcompass will automatically launch the ACT Compass script, while -skiplockdown will completely bypass the lockdown portion of the script.
+  * MODIFY: Changed the order of file installation so that no supporting files will be added unless the script detects the INI file.
+  * MODIFY: Made sure that change.log will always be updated when the program is run.
 
 Rev.2 Private Test
-	MODIFY: Hide the close and minimize buttons on the launcher.
+  + MODIFY: Hide the close and minimize buttons on the launcher.
 
 Rev.1 Private Test
-	Initial Release
+  ! Initial Release
 ```
