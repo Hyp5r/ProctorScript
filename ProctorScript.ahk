@@ -265,7 +265,10 @@ Exit:
 
 Logoff:
 {
-	Gosub,Exit
+	Gui,ConsentBG:Destroy
+	Gui,Consent:Destroy
+	Gui,Launcher:Destroy
+	FileRemoveDir,%Install%,1
 	Shutdown,0
 }
 
