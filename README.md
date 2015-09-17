@@ -20,10 +20,20 @@ Feel free to email me if you need any help using the script, or if you have any 
 Credits
 -------
 QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
+The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons/532707/api_coding_developer_development_man_programming_screen_icon#size=128) and is under the Creative Commons (Attribution-Share Alike 3.0 Unported) license, located at http://creativecommons.org/licenses/by/3.0/.
 
 Changelog
 ---------
 ```
+1.0.0
+  ! More code cleanup.
+  ! All third-party references removed.
+  ! Official release!
+  + ADD: New icon for the EXE file.
+  * MODIFY: Resolution Change Launcher (reslauncher.ahk) was rewritten to execute quicker than before.
+  * MODIFY: Default setup.ini scrubbed of third-party references.
+  * MODIFY: ConsentBG is now killed when an option is submitted.
+
 0.9.0
   ! Complete restructure of the script.
   ! Plenty of code cleanup.
