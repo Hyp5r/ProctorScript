@@ -71,183 +71,219 @@ Return
 }
 
 Submit:
-{
-	Gui,Launcher:Submit,NoHide
-	If Option1 = 0
-	If Option2 = 0
-	If Option3 = 0
-	If Option4 = 0
-	If Option5 = 0
-	If Option6 = 0
-	If Option7 = 0
-	{
-		MsgBox,4112,%Title%,You need to select an option!
-		Return
-	}
+{ Gui,Launcher:Submit,NoHide
+  If Option1 = 0
+  If Option2 = 0
+  If Option3 = 0
+  If Option4 = 0
+  If Option5 = 0
+  If Option6 = 0
+  If Option7 = 0
+    { MsgBox,4112,%Title%,An option must be selected before you can continue.
+      Return
+      }
+	  
+; Code sourced from http://www.autohotkey.com/board/topic/99352-required-fields-to-submit/?p=623781
+  Fields := "FirstName,LastName"
+  Empty_Fields := ""
+  Loop, Parse, Fields, `,
+  If (!StrLen(%A_LoopField%))
+  empty_fields .= (StrLen(empty_fields) ? "," : "") A_LoopField
+  If (StrLen(empty_fields))
+    { MsgBox,4112,%Title%,Your name must be entered before you can continue.
+      Return
+      }
+  
+  Gui,Launcher:Destroy
 
-	/* 
-		Code sourced from http://www.autohotkey.com/board/topic/99352-required-fields-to-submit/?p=623781
-	*/
+  If (Option1 = 1)
+    { If LA_Option1Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option1Title%`,`n,%LogFile%
+          }
+        If Option1Logoff=1
+          { RunWait,%LA_Option1Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option1Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 
-	Fields := "FirstName,LastName"
-	Empty_Fields := ""
-	Loop, Parse, Fields, `,
-	If (!StrLen(%A_LoopField%))
-	empty_fields .= (StrLen(empty_fields) ? "," : "") A_LoopField
-	If (StrLen(empty_fields))
-	{
-		MsgBox,4112,%Title%,Please input your name.
-		Return
-	}
+  If (Option2 = 1)
+    { If LA_Option2Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option2Title%`,`n,%LogFile%
+          }
+        If Option2Logoff=1
+          { RunWait,%LA_Option2Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option2Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 
-	/*
-		End code sourced from http://www.autohotkey.com/board/topic/99352-required-fields-to-submit/?p=623781
-	*/
+  If (Option3 = 1)
+    { If LA_Option3Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option3Title%`,`n,%LogFile%
+          }
+        If Option3Logoff=1
+          { RunWait,%LA_Option3Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option3Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
+
+  If (Option4 = 1)
+    { If LA_Option4Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option4Title%`,`n,%LogFile%
+          }
+        If Option4Logoff=1
+          { RunWait,%LA_Option4Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option4Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 	
-	Gui,Launcher:Destroy
-
-	If (Option1 = 1)
-	{
-		If LA_Option1Link=Resolution Change Launcher
-			Gosub,Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option1Title%`,`n,%LogFile%
-			}
-			If Option1Logoff=1
-			{ RunWait,%LA_Option1Link%,,UseErrorLevel
-			  }
-			RunWait %LA_Option1Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option1Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
-
-	If (Option2 = 1)
-	{
-		If LA_Option2Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option2Title%`,`n,%LogFile%
-			}
-			RunWait %LA_Option2Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option2Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
-
-	If (Option3 = 1)
-	{
-		If LA_Option3Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option3Title%`,`n,%LogFile%
-			}
-			RunWait %LA_Option3Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option3Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
-
-	If (Option4 = 1)
-	{
-		If LA_Option4Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option4Title%`,`n,%LogFile%
-			}
-			RunWait %LA_Option4Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option4Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
+  If (Option5 = 1)
+    { If LA_Option5Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option5Title%`,`n,%LogFile%
+          }
+        If Option5Logoff=1
+          { RunWait,%LA_Option5Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option5Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 	
-	If (Option5 = 1)
-	{
-		If LA_Option5Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option5Title%`,`n,%LogFile%
-			}
-			RunWait %LA_Option5Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option5Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
+  If (Option6 = 1)
+    { If LA_Option6Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option6Title%`,`n,%LogFile%
+          }
+        If Option6Logoff=1
+          { RunWait,%LA_Option6Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option6Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 	
-	If (Option6 = 1)
-	{
-		If LA_Option6Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option6Title%`,`n,%LogFile%
-			}
-			RunWait %LA_Option6Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-			{}
-			If Option6Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
-	
-	If (Option7 = 1)
-	{
-		If LA_Option7Link=Resolution Change Launcher
-			Gosub Resolution_Change_Launcher
-		Else
-		{
-			If EnableLog=1
-			{
-				Gosub,Log
-				FileAppend,%LA_Option7Title%`,`n,%LogFile%
-			}
-			RunWait,%LA_Option7Link%,,UseErrorLevel
-			If ErrorLevel=ERROR
-				{}
-			If Option7Logoff=1
-				Gosub,Logoff
-			Gosub,Exit
-		}
-	}
+  If (Option7 = 1)
+    { If LA_Option7Link=Resolution Change Launcher
+        Gosub,Resolution_Change_Launcher
+      Else
+      { If EnableLog=1
+        { Gosub,Log
+          FileAppend,%LA_Option7Title%`,`n,%LogFile%
+          }
+        If Option7Logoff=1
+          { RunWait,%LA_Option7Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+              { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+                Gosub,Exit
+                }
+            Gosub,Logoff
+            }
+        Else
+          { Run %LA_Option7Link%,,UseErrorLevel
+            If ErrorLevel=ERROR
+            { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+              Gosub,Exit
+              }
+            Gosub,Exit
+            }
+        }
+    }
 }
 
 Disagree:
