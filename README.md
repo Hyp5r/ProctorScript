@@ -19,6 +19,10 @@ Comments?  Questions?  Suggestions?
 -----------------------------------
 Feel free to email me if you need any help using the script, or if you have any suggestions or comments regarding the script.
 
+Credits
+-------
+QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
+
 CHANGELOG
 =========
 Rev.6 Private Test
