@@ -30,13 +30,12 @@ IfNotExist,setup.ini
 }
 
 ; Initial
-IniRead,Title,%INI%,Initial,Title
-IniRead,EnableLog,%INI%,Initial,EnableLog
-IniRead,LogFile,%INI%,Initial,LogFile
+IniRead,EnableLog,%INI%,Log,EnableLog
+IniRead,LogFile,%INI%,Log,LogFile
 
-; Lockdown
-IniRead,LD_Title,%INI%,Lockdown,LD_Title
-IniRead,LD_Content,%INI%,Lockdown,LD_Content
+; Consent
+IniRead,CS_Title,%INI%,Consent,Title
+IniRead,CS_Content,%INI%,Consent,Content
 Loop
 {
 	StringReplace,LD_Content,LD_Content,[BR],`n`n,UseErrorLevel
