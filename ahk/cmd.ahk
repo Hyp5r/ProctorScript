@@ -23,9 +23,9 @@ Loop, %0%
 		Gosub,Launcher
 		Return
 	}
-	If param = -actcompass
+	If param = -reslauncher
 	{
-		Gosub,ACT_Compass
+		Gosub,Resolution_Change_Launcher
 		Return
 	}
 	Else
