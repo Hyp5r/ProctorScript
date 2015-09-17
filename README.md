@@ -9,6 +9,16 @@ Of course, that's the ideal of this script.  In theory, it would work without an
 
 The log file records info, such as the date the account was logged in, the first and last name of the person, the computer name and what version of Windows it was running, IP addresses, and the option the user selected in the launcher.
 
+How do I use this?
+------------------
+Using this script is easy!  Download the compiled ProctorScript.exe (or use Ahk2Exe to compile one from the source yourself!) and double-click the program.  You'll be greeted with a welcome message and a ProctorScript.ini file will drop where you ran the program.  From there, you'll need to edit the INI file to have the options you want!
+
+At the top of the INI file, there's a Consent section, where you can put a terms of use, computer policy for your institution, etc.  If you'd like, you can use a command switch (-skipconsent) to bypass this screen altogether.
+
+Within the INI file, there are seven options that can be used, Options 1 - 7.  Each one can launch a different program and have the user logoff forcefully once the program is closed.  There's also a special option called Resolution Change Launcher.  If you specify any Link option as "Resolution Change Launcher," you can have the screen resolution change before the program is run, which is great for applications that require lower resolutions!  Of course, if you only need this script for this, you can pass a command switch (-reslauncher) and automatically launch your program that way!
+
+Of course, looking in the INI file and running the program will definitely give you a feel of the program.  Should you get lost, feel free to contact me and I'll gladly help you out!
+
 Why use it?
 -----------
 If users have their own individual login, there's no point in using this script, really.  If you share a general login, however, you may want to know who's using it, when, and why.  This script also forces a message to show up when run, and the user must accept the message or be logged out.
