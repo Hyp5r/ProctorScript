@@ -15,7 +15,6 @@ Menu,Tray,NoStandard
 Launcher: 
 { If EnableLog=1
     FileAppend,1`,,%LogFile%
-  Gui,Consent:Destroy
   Gui,Launcher:Color,FFFFFF
   Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
   Gui,Launcher:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\1.png
@@ -38,6 +37,7 @@ Launcher:
   Gui,Launcher:Add,Text,X242 Y350,Last Name
   Gui,Launcher:Show,H480 W800,
   Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
+  Gui,Consent:Destroy
 
 If LA_Option1Enable=0
   GuiControl,Launcher:Hide,Option1
