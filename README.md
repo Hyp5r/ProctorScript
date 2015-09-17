@@ -20,6 +20,7 @@ Feel free to email me if you need any help using the script, or if you have any 
 Credits
 -------
 QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
+
 The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons/532707/api_coding_developer_development_man_programming_screen_icon#size=128) and is under the Creative Commons (Attribution-Share Alike 3.0 Unported) license, located at http://creativecommons.org/licenses/by/3.0/.
 
 Changelog
