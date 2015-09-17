@@ -17,6 +17,7 @@ RunWait,%RCL_Link%,,UseErrorLevel
 ; Second Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_OriginalXRes% /y:%RCL_OriginalYRes%
 Sleep,2500
+
 If RCL_Logoff=1
   Gosub,Logoff
 Gosub,Exit
