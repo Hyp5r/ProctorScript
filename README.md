@@ -17,6 +17,8 @@ At the top of the INI file, there's a Consent section, where you can put a terms
 
 Within the INI file, there are seven options that can be used, Options 1 - 7.  Each one can launch a different program and have the user logoff forcefully once the program is closed.  There's also a special option called Resolution Change Launcher.  If you specify any Link option as "Resolution Change Launcher," you can have the screen resolution change before the program is run, which is great for applications that require lower resolutions!  Of course, if you only need this script for this, you can pass a command switch (-reslauncher) and automatically launch your program that way!
 
+If you enable the logfile in the INI, you'll be greeted with a CSV file wherever you set the log location.  This contains the user's name, what option they selected, the time and date that the script was ran, the computer name, IP addresses of up to four NICs, and more.  You can use this log to monitor who is on a computer at a specific time.
+
 Of course, looking in the INI file and running the program will definitely give you a feel of the program.  Should you get lost, feel free to contact me and I'll gladly help you out!
 
 Why use it?
@@ -41,6 +43,8 @@ Changelog
   ! All third-party references removed.
   ! Official release!
   + ADD: New icon for the EXE file.
+  + ADD: New switch -cleanini, used to drop a default ProctorScript.ini.
+  + ADD: Switch -help now shows documentation on command line switches added.
   * MODIFY: Resolution Change Launcher (reslauncher.ahk) was rewritten to execute quicker than before.
   * MODIFY: Default setup.ini scrubbed of third-party references.
   * MODIFY: ConsentBG is now killed when an option is submitted.
