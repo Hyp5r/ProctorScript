@@ -24,7 +24,7 @@ QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
 Changelog
 ---------
 ```
-1.0.0
+0.9.0
   ! Complete restructure of the script.
   ! Plenty of code cleanup.
   ! Removal of all work-specific references.
