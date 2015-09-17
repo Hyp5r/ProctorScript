@@ -24,16 +24,24 @@ Credits
 QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
 
 CHANGELOG
-=========
+---------
 ```
+1.0.0
+  ! Complete restructure of the script.
+  ! Plenty of code cleanup.
+  * MODIFY: The program now installs to the user's Documents folder so standard users do not run into issues.
+  * MODIFY: Switch -skiplockdown was changed to -skipconsent.
+  * MODIFY: Faded background (ConsentBG) now persists until the application is closed.
+  * MODIFY: Window border was removed on the Launcher portion of the script.
+  - REMOVE: The -source switch was removed as source is now available via GitHub.
+  - REMOVE: Copyrighted images used are now removed, replaced with a placeholder that can be changed out.
 
 Rev.6 Private Test
   * MODIFY: The program now installs to the root of the Windows directory, typically the C:\ drive.  This is due to group	policy settings that disable execution in the AppData directory.
   * MODIFY: The command line switches have been moved in the code to execute after program installation again.  This will (hopefully) fix the flashing window issue when using command line switches in the program.
 
 Rev.5 Private Test
-  + ADD: Starting of the -help command switch, which will
-	open a batch file with possible switches and uses.
+  + ADD: Starting of the -help command switch, which will open a batch file with possible switches and uses.
   * MODIFY: Moved the switch coding to be ahead of the file installation, and call file installation when a switch explicitly needs it.  This prevents the -source command from having two dumps, one into the script directory and one into the %TEMP% directory.
     ! This causes a currently known glitch, where using the other switches will cause the lockdown section to flash	on screen before disappearing.
 
