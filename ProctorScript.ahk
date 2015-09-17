@@ -109,7 +109,7 @@ Submit:
 	If (Option1 = 1)
 	{
 		If LA_Option1Link=ACT Compass
-			Gosub,ACT_Compass
+			Gosub,Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -127,7 +127,7 @@ Submit:
 	If (Option2 = 1)
 	{
 		If LA_Option2Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -145,7 +145,7 @@ Submit:
 	If (Option3 = 1)
 	{
 		If LA_Option3Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -163,7 +163,7 @@ Submit:
 	If (Option4 = 1)
 	{
 		If LA_Option4Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -181,7 +181,7 @@ Submit:
 	If (Option5 = 1)
 	{
 		If LA_Option5Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -199,7 +199,7 @@ Submit:
 	If (Option6 = 1)
 	{
 		If LA_Option6Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -217,7 +217,7 @@ Submit:
 	If (Option7 = 1)
 	{
 		If LA_Option7Link=ACT Compass
-			Gosub ACT_Compass
+			Gosub Resolution_Change_Launcher
 		Else
 		{
 			If EnableLog=1
@@ -242,8 +242,8 @@ Disagree:
   Goto,Exit
   }
 
-ACT_Compass:
-  #Include ahk\actcompass.ahk
+Resolution_Change_Launcher:
+  #Include ahk\reschange.ahk
 
 Log:
 {

@@ -1,15 +1,13 @@
-; FILE INSTALLATIONS
-; Files are copied to the user's Documents folder, within the UUID folder listed at the top.
 FileCreateDir,%Install%
   FileInstall,README.md,%Install%\README.md,1
   FileCreateDir,%Install%\bin
     FileInstall,bin\qres.exe,%Install%\bin\qres.exe,1
     FileInstall,bin\qres.htm,%Install%\bin\qres.htm,1
   FileCreateDir,%Install%\ahk
-    FileInstall,ahk\actcompass.ahk,%Install%\ahk\actcompass.ahk,1
     FileInstall,ahk\cmd.ahk,%Install%\ahk\cmd.ahk,1
     FileInstall,ahk\consent.ahk,%Install%\ahk\consent.ahk,1
     FileInstall,ahk\install.ahk,%Install%\ahk\install.ahk,1
+    FileInstall,ahk\reschange.ahk,%Install%\ahk\reschange.ahk,1
     FileInstall,ahk\var.ahk,%Install%\ahk\var.ahk,1
   FileCreateDir,%Install%\img
     FileInstall,img\icon.ico,%Install%\img\icon.ico,1
@@ -29,7 +27,7 @@ IfNotExist,setup.ini
 	ExitApp
 }
 
-; Initial
+; Log
 IniRead,EnableLog,%INI%,Log,EnableLog
 IniRead,LogFile,%INI%,Log,LogFile
 
@@ -89,13 +87,13 @@ IniRead,LA_Option7Title,%INI%,Option 7,Title
 IniRead,LA_Option7Link,%INI%,Option 7,Link
 IniRead,LA_Option7Logoff,%INI%,Option 7,Logoff
 
-; ACT Compass
-IniRead,ACT_LockdownBrowser,%INI%,ACT Compass,LockdownBrowser
-IniRead,ACT_OriginalXRes,%INI%,ACT Compass,OriginalXRes
-IniRead,ACT_OriginalYRes,%INI%,ACT Compass,OriginalYRes
-IniRead,ACT_CompassXRes,%INI%,ACT Compass,CompassXRes
-IniRead,ACT_CompassYRes,%INI%,ACT Compass,CompassYRes
-IniRead,ACT_Logoff,%INI%,ACT Compass,Logoff
+; Resolution Change Launcher
+IniRead,RCL_Link,%INI%,Resolution Change Launcher,Link
+IniRead,RCL_OriginalXRes,%INI%,Resolution Change Launcher,OriginalXRes
+IniRead,RCL_OriginalYRes,%INI%,Resolution Change Launcher,OriginalYRes
+IniRead,RCL_ChangeXRes,%INI%,Resolution Change Launcher,ChangeXRes
+IniRead,RCL_ChangeYRes,%INI%,Resolution Change Launcher,ChangeYRes
+IniRead,RCL_Logoff,%INI%,Resolution Change Launcher,Logoff
 
 ; INI FAILSAFE
 ; Verify that specific variables in the INI file are set properly.
