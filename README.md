@@ -5,7 +5,7 @@ What is this?
 -------------
 ProctorScript is a script written to help administrators keep track of who's doing what on their machines.  This script allows administrators to configure an INI file with preset options so that a user can access them easily, while computer information is recorded to a log file.
 
-Of course, that's the ideal of this script.  In theory, it would work without any issue, but in practice, this script can be avoided entirely.  It's a good-will effort to keep track of users using an account that has to be shared out for multiple uses.  For example, night classes in the TCAT system may need access to the machines and a student roster may not be available to the admin.  With this script, an admin can record the user's first and last name, plus their general intention on the machine.
+Of course, that's the ideal of this script.  In theory, it would work without any issue, but in practice, this script can be avoided entirely.  It's a good-will effort to keep track of users using an account that has to be shared out for multiple uses.  For example, users may need access to a computer but no specific login account for them exists, so they must use a guest account.  With this script, an admin can record the user's first and last name, plus their general intention on the machine using the guest account.
 
 The log file records info, such as the date the account was logged in, the first and last name of the person, the computer name and what version of Windows it was running, IP addresses, and the option the user selected in the launcher.
 
@@ -13,11 +13,9 @@ Why use it?
 -----------
 If users have their own individual login, there's no point in using this script, really.  If you share a general login, however, you may want to know who's using it, when, and why.  This script also forces a message to show up when run, and the user must accept the message or be logged out.
 
-This script is also useful for ACT Compass exams.  This script has my auto-launching ACT Compass script baked in that will automatically change the resolution to what ACT Compass wants, launches the Lockdown Browser, and changes the resolution back to normal when Lockdown Browser is closed.
-
 Comments?  Questions?  Suggestions?
 -----------------------------------
-Feel free to email me if you need any help using the script, or if you have any suggestions or comments regarding the script.
+Feel free to email me if you need any help using the script, or if you have any suggestions or comments regarding the script.  My email is listed in the ProctorScript.ahk file.
 
 Credits
 -------
@@ -29,6 +27,7 @@ CHANGELOG
 1.0.0
   ! Complete restructure of the script.
   ! Plenty of code cleanup.
+  ! Removal of all work-specific references.
   * MODIFY: The program now installs to the user's Documents folder so standard users do not run into issues.
   * MODIFY: Switch -skiplockdown was changed to -skipconsent.
   * MODIFY: Faded background (ConsentBG) now persists until the application is closed.
