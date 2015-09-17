@@ -1,25 +1,25 @@
-; SWITCHES
-; Command-line switches allowed with the script.
-
-; Only one switch at a time!
-If ( NumberOfParameters > 1 )
-{ MsgBox,4112,Launch Error,You've passed too many switches to ProctorScript.
-  Gosub,Exit
-  }
-Parameter:
-Loop, %0%
-{ param := %A_Index%
-  If param = -help
-  { MsgBox,4160,Coming Soon!,The -help command is coming soon.  Sorry about that!
+Loop,%0%
+{ switch := %A_Index%
+  If switch = 
+    break
+  If switch = -cleanini
+  { IfNotExist,%INI%
+    { FileCopy,%Install%\%INI%,%A_ScriptDir%,1
+      MsgBox,4160,ProctorScript,A clean INI file has been placed in the script directory.
+	  }
     Gosub,Exit
     }
-  If param = -skipconsent
-  { Gosub,ConsentBG
-    Gosub,Launcher
+  If switch = -help
+  { MsgBox,4160,ProctorScript,ProctorScript Switches`n`n-cleanini`n        Creates a fresh ProctorScript.ini in the script directory.`n`n-reslauncher`n        Automatically runs the Resolution Change Launcher with the`n        program defined in setup.ini.`n`n-skipconsent`n        Skips the consent screen and goes straight to the launcher.,
+    Gosub,Exit
+    }
+  If switch = -reslauncher
+  { Gosub,Resolution_Change_Launcher
     Return
     }
-  If param = -reslauncher
-  { Gosub,Resolution_Change_Launcher
+  If switch = -skipconsent
+  { Gosub,ConsentBG
+    Gosub,Launcher
     Return
     }
   Else
