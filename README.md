@@ -1,11 +1,11 @@
------------------------------------------------------------------
-
-AHK VERSION:	Lexikos 1.1.22.00 Unicode 32-bit
-AUTHOR:			William Quinn
-TITLE:			ProctorScript
-UUID:			c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
-
-----------------------------------------------------------------
+> -----------------------------------------------------------------
+> 
+> AHK VERSION:	Lexikos 1.1.22.00 Unicode 32-bit
+> AUTHOR:			William Quinn
+> TITLE:			ProctorScript
+> UUID:			c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
+> 
+> ----------------------------------------------------------------
 
 WHAT IS THIS?
 ProctorScript is a script written to help administrators keep
