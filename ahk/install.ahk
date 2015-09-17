@@ -1,5 +1,6 @@
 FileCreateDir,%Install%
   FileInstall,README.md,%Install%\README.md,1
+  FileInstall,setup.ini,%Install%\setup.ini,1
   FileCreateDir,%Install%\bin
     FileInstall,bin\qres.exe,%Install%\bin\qres.exe,1
     FileInstall,bin\qres.htm,%Install%\bin\qres.htm,1
@@ -17,7 +18,7 @@ FileCreateDir,%Install%
     FileInstall,img\3.png,%Install%\img\3.png,1
 ; Does setup.ini even exist?
 IfNotExist,setup.ini
-{ FileInstall,setup.ini,setup.ini,1
+{ FileCopy,%Install%\setup.ini,%A_ScriptDir%
   MsgBox,4160,Welcome to ProctorScript!,Since this seems to be your first time using the script, an INI file has been placed in the directory where you ran the script.  This INI contains everything that the program needs to run successfully.  If you need help using the script`,please email wquinn@outlook.com or find Hyperdaemon on GitHub!  Thanks for trying it out!`n`nProctorScript %Version%.
   ExitApp
   }
