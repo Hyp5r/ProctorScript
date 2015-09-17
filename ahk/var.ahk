@@ -6,6 +6,11 @@ SetWorkingDir,%A_ScriptDir%
 FormatTime,Date,,yyyy/MM/dd
 FormatTime,Time,,h:mm:ss tt
 
+; Retrieve common Windows variables
+EnvGet,Temp,Temp
+EnvGet,Tmp,Tmp
+EnvGet,WinDir,WinDir
+
 ; Script Variables
 Install = %A_MyDocuments%\c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
 Version = 0.9.0

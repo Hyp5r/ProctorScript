@@ -39,36 +39,36 @@ Launcher:
   Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
   Gui,Consent:Destroy
 
-If LA_Option1Enable=0
-  GuiControl,Launcher:Hide,Option1
-  Else
-  Gui,Launcher:Add,Picture,X0 Y122 W300 H1,%Install%\img\2.png
-If LA_Option2Enable=0
-  GuiControl,Launcher:Hide,Option2
-  Else
-  Gui,Launcher:Add,Picture,X0 Y154 W300 H1,%Install%\img\2.png
-If LA_Option3Enable=0
-  GuiControl,Launcher:Hide,Option3
-  Else
-  Gui,Launcher:Add,Picture,X0 Y186 W300 H1,%Install%\img\2.png
-If LA_Option4Enable=0
-  GuiControl,Launcher:Hide,Option4
-  Else
-  Gui,Launcher:Add,Picture,X0 Y218 W300 H1,%Install%\img\2.png
-If LA_Option5Enable=0
-  GuiControl,Launcher:Hide,Option5
-  Else
-  Gui,Launcher:Add,Picture,X0 Y250 W300 H1,%Install%\img\2.png
-If LA_Option6Enable=0
-  GuiControl,Launcher:Hide,Option6
-  Else
-  Gui,Launcher:Add,Picture,X0 Y282 W300 H1,%Install%\img\2.png
-If LA_Option7Enable=0
-  GuiControl,Launcher:Hide,Option7
-  Else
-  Gui,Launcher:Add,Picture,X0 Y314 W300 H1,%Install%\img\2.png
-Return
-}
+  If LA_Option1Enable=0
+    GuiControl,Launcher:Hide,Option1
+    Else
+    Gui,Launcher:Add,Picture,X0 Y122 W300 H1,%Install%\img\2.png
+  If LA_Option2Enable=0
+    GuiControl,Launcher:Hide,Option2
+    Else
+    Gui,Launcher:Add,Picture,X0 Y154 W300 H1,%Install%\img\2.png
+  If LA_Option3Enable=0
+    GuiControl,Launcher:Hide,Option3
+    Else
+    Gui,Launcher:Add,Picture,X0 Y186 W300 H1,%Install%\img\2.png
+  If LA_Option4Enable=0
+    GuiControl,Launcher:Hide,Option4
+    Else
+    Gui,Launcher:Add,Picture,X0 Y218 W300 H1,%Install%\img\2.png
+  If LA_Option5Enable=0
+    GuiControl,Launcher:Hide,Option5
+    Else
+    Gui,Launcher:Add,Picture,X0 Y250 W300 H1,%Install%\img\2.png
+  If LA_Option6Enable=0
+    GuiControl,Launcher:Hide,Option6
+    Else
+    Gui,Launcher:Add,Picture,X0 Y282 W300 H1,%Install%\img\2.png
+  If LA_Option7Enable=0
+    GuiControl,Launcher:Hide,Option7
+    Else
+    Gui,Launcher:Add,Picture,X0 Y314 W300 H1,%Install%\img\2.png
+  Return
+  }
 
 Submit:
 { Gui,Launcher:Submit,NoHide
@@ -291,38 +291,35 @@ Disagree:
 { Suspend,On
   Gui,Consent:Destroy
   MsgBox,4112,%Title%,You will be logged out of the system.
-  Goto,Exit
+  Goto,Logoff
   }
 
 Resolution_Change_Launcher:
   #Include ahk\reschange.ahk
 
 Log:
-{
-	FileAppend,%FirstName%`,%LastName%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
-	Return
-}
+{ FileAppend,%FirstName%`,%LastName%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
+  Return
+  }
 
 ConsentBGGuiClose:
 ConsentGuiClose:
 LauncherGuiClose:
 Exit:
-{
-	Gui,ConsentBG:Destroy
-	Gui,Consent:Destroy
-	Gui,Launcher:Destroy
-	FileRemoveDir,%Install%,1
-	ExitApp
-}
+{ Gui,ConsentBG:Destroy
+  Gui,Consent:Destroy
+  Gui,Launcher:Destroy
+  FileRemoveDir,%Install%,1
+  ExitApp
+  }
 
 Logoff:
-{
-	Gui,ConsentBG:Destroy
-	Gui,Consent:Destroy
-	Gui,Launcher:Destroy
-	FileRemoveDir,%Install%,1
-	Shutdown,0
-}
+{ Gui,ConsentBG:Destroy
+  Gui,Consent:Destroy
+  Gui,Launcher:Destroy
+  FileRemoveDir,%Install%,1
+  Shutdown,0
+  }
 
 ; Hotkeys Disabled
 !F4::return
