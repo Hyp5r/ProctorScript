@@ -1,7 +1,7 @@
 ; FILE INSTALLATIONS
 ; Files are copied to the user's Documents folder, within the UUID folder listed at the top.
 FileCreateDir,%Install%
-  FileInstall,README.md,README.md,1
+  FileInstall,README.md,%Install%\README.md,1
   FileCreateDir,%Install%\bin
     FileInstall,bin\qres.exe,%Install%\bin\qres.exe,1
     FileInstall,bin\qres.htm,%Install%\bin\qres.htm,1
@@ -38,7 +38,7 @@ IniRead,CS_Title,%INI%,Consent,Title
 IniRead,CS_Content,%INI%,Consent,Content
 Loop
 {
-	StringReplace,LD_Content,LD_Content,[BR],`n`n,UseErrorLevel
+	StringReplace,CS_Content,CS_Content,[BR],`n`n,UseErrorLevel
 	If ErrorLevel=0
 	Break
 }
