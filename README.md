@@ -21,7 +21,7 @@ Credits
 -------
 QRes was created by Anders Kjersem and is Copyright © 2003 Anders Kjersem.
 
-CHANGELOG
+Changelog
 ---------
 ```
 1.0.0
