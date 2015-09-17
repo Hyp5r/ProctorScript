@@ -95,6 +95,7 @@ Submit:
       }
   
   Gui,Launcher:Destroy
+  Gui,ConsentBG:Destroy
 
   If (Option1 = 1)
     { If LA_Option1Link=Resolution Change Launcher
