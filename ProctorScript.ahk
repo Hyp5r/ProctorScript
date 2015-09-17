@@ -8,10 +8,8 @@
 #Include ahk\install.ahk ; Installs all files.
 #Include ahk\cmd.ahk ; Adds command-line switches.
 #Include ahk\consent.ahk ; Similar to Windows UAC, shows INI variables.
-
 ; Show icon in system tray, disable tray menu.
 Menu,Tray,NoStandard
-
 Launcher: 
 { If EnableLog=1
     FileAppend,1`,,%LogFile%
@@ -38,7 +36,6 @@ Launcher:
   Gui,Launcher:Show,H480 W800,
   Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
   Gui,Consent:Destroy
-
   If LA_Option1Enable=0
     GuiControl,Launcher:Hide,Option1
     Else
@@ -69,7 +66,6 @@ Launcher:
     Gui,Launcher:Add,Picture,X0 Y314 W300 H1,%Install%\img\2.png
   Return
   }
-
 Submit:
 { Gui,Launcher:Submit,NoHide
   If Option1 = 0
@@ -81,8 +77,7 @@ Submit:
   If Option7 = 0
     { MsgBox,4112,%Title%,An option must be selected before you can continue.
       Return
-      }
-	  
+      }	  
 ; Code sourced from http://www.autohotkey.com/board/topic/99352-required-fields-to-submit/?p=623781
   Fields := "FirstName,LastName"
   Empty_Fields := ""
@@ -93,13 +88,13 @@ Submit:
     { MsgBox,4112,%Title%,Your name must be entered before you can continue.
       Return
       }
-  
   Gui,Launcher:Destroy
   Gui,ConsentBG:Destroy
-
   If (Option1 = 1)
     { If LA_Option1Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option1Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -123,10 +118,11 @@ Submit:
             }
         }
     }
-
   If (Option2 = 1)
     { If LA_Option2Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option2Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -150,10 +146,11 @@ Submit:
             }
         }
     }
-
   If (Option3 = 1)
     { If LA_Option3Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option3Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -177,10 +174,11 @@ Submit:
             }
         }
     }
-
   If (Option4 = 1)
     { If LA_Option4Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option4Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -204,10 +202,11 @@ Submit:
             }
         }
     }
-	
   If (Option5 = 1)
     { If LA_Option5Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option5Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -231,10 +230,11 @@ Submit:
             }
         }
     }
-	
   If (Option6 = 1)
     { If LA_Option6Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option6Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -258,10 +258,11 @@ Submit:
             }
         }
     }
-	
   If (Option7 = 1)
     { If LA_Option7Link=Resolution Change Launcher
         Gosub,Resolution_Change_Launcher
+      If LA_Option7Link=0
+	    Gosub,Exit
       Else
       { If EnableLog=1
         { Gosub,Log
@@ -286,22 +287,18 @@ Submit:
         }
     }
 }
-
 Disagree:
 { Suspend,On
   Gui,Consent:Destroy
   MsgBox,4112,%Title%,You will be logged out of the system.
   Goto,Logoff
   }
-
 Resolution_Change_Launcher:
   #Include ahk\reschange.ahk
-
 Log:
 { FileAppend,%FirstName%`,%LastName%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
   Return
   }
-
 ConsentBGGuiClose:
 ConsentGuiClose:
 LauncherGuiClose:
@@ -312,7 +309,6 @@ Exit:
   FileRemoveDir,%Install%,1
   ExitApp
   }
-
 Logoff:
 { Gui,ConsentBG:Destroy
   Gui,Consent:Destroy
@@ -320,7 +316,6 @@ Logoff:
   FileRemoveDir,%Install%,1
   Shutdown,0
   }
-
 ; Hotkeys Disabled
 !F4::return
 !Tab::return
