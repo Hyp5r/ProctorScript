@@ -108,7 +108,7 @@ Submit:
 
 	If (Option1 = 1)
 	{
-		If LA_Option1Link=ACT Compass
+		If LA_Option1Link=Resolution Change Launcher
 			Gosub,Resolution_Change_Launcher
 		Else
 		{
@@ -117,7 +117,12 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option1Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option1Link%
+			If Option1Logoff=1
+			{ RunWait,%LA_Option1Link%,,UseErrorLevel
+			  }
+			RunWait %LA_Option1Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option1Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -126,7 +131,7 @@ Submit:
 
 	If (Option2 = 1)
 	{
-		If LA_Option2Link=ACT Compass
+		If LA_Option2Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
@@ -135,7 +140,9 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option2Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option2Link%
+			RunWait %LA_Option2Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option2Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -144,7 +151,7 @@ Submit:
 
 	If (Option3 = 1)
 	{
-		If LA_Option3Link=ACT Compass
+		If LA_Option3Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
@@ -153,7 +160,9 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option3Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option3Link%
+			RunWait %LA_Option3Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option3Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -162,7 +171,7 @@ Submit:
 
 	If (Option4 = 1)
 	{
-		If LA_Option4Link=ACT Compass
+		If LA_Option4Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
@@ -171,7 +180,9 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option4Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option4Link%
+			RunWait %LA_Option4Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option4Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -180,7 +191,7 @@ Submit:
 	
 	If (Option5 = 1)
 	{
-		If LA_Option5Link=ACT Compass
+		If LA_Option5Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
@@ -189,7 +200,9 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option5Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option5Link%
+			RunWait %LA_Option5Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option5Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -198,7 +211,7 @@ Submit:
 	
 	If (Option6 = 1)
 	{
-		If LA_Option6Link=ACT Compass
+		If LA_Option6Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
@@ -207,7 +220,9 @@ Submit:
 				Gosub,Log
 				FileAppend,%LA_Option6Title%`,`n,%LogFile%
 			}
-			RunWait %LA_Option6Link%
+			RunWait %LA_Option6Link%,,UseErrorLevel
+			If ErrorLevel=ERROR
+			{}
 			If Option6Logoff=1
 				Gosub,Logoff
 			Gosub,Exit
@@ -216,7 +231,7 @@ Submit:
 	
 	If (Option7 = 1)
 	{
-		If LA_Option7Link=ACT Compass
+		If LA_Option7Link=Resolution Change Launcher
 			Gosub Resolution_Change_Launcher
 		Else
 		{
