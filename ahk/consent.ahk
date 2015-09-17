@@ -4,7 +4,6 @@ ConsentBG:
   Gui,ConsentBG:Show,H10000 W10000,ConsentBG
   WinSet,Transparent,200,ConsentBG
   }
-
 Consent:
 { Gui,Consent:Color,FFFFFF
   Gui,Consent:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\0.png
