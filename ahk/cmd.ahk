@@ -23,7 +23,7 @@ Loop,%0%
     Return
     }
   Else
-  { MsgBox,4112,Launch Error,You've passed a switch that doesn't exist.
+  { MsgBox,4112,ProctorScript,You've passed a switch that doesn't exist.
     Gosub,Exit
     }
   }
