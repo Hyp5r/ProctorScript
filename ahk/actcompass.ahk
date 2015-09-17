@@ -10,7 +10,7 @@
 		Gosub,Exit
 	}
 	; First Resolution Change
-	RunWait,%Install%\app\qres.exe /x:%ACT_CompassXRes% /y:%ACT_CompassYRes%
+	RunWait,%Install%\bin\qres.exe /x:%ACT_CompassXRes% /y:%ACT_CompassYRes%
 	Sleep,2500
 
 	; Run Application
@@ -22,7 +22,7 @@
 	}
 
 	; Second Resolution Change
-	RunWait,%Install%\app\qres.exe /x:%ACT_OriginalXRes% /y:%ACT_OriginalYRes%
+	RunWait,%Install%\bin\qres.exe /x:%ACT_OriginalXRes% /y:%ACT_OriginalYRes%
 	Sleep,2500
 	If ACT_Logoff=1
 		Gosub,Logoff
