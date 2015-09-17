@@ -36,7 +36,7 @@ Launcher:
   Gui,Launcher:Font,CBlack s10 Bold,Segoe UI
   Gui,Launcher:Add,Text,X32 Y350,First Name
   Gui,Launcher:Add,Text,X242 Y350,Last Name
-  Gui,Launcher:Show,H480 W800,%Title%
+  Gui,Launcher:Show,H480 W800,
   Gui,Launcher:+AlwaysOnTop -Caption +Border -SysMenu
 
 If LA_Option1Enable=0
