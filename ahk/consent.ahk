@@ -1,7 +1,7 @@
 ConsentBG:
 { Gui,ConsentBG:Color,000000
   Gui,ConsentBG:-Caption +ToolWindow
-  Gui,ConsentBG:Show,H10000 W10000,ConsentBG
+  Gui,ConsentBG:Show,Maximize,ConsentBG
   WinSet,Transparent,200,ConsentBG
   }
 Consent:
