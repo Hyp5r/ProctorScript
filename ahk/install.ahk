@@ -16,6 +16,7 @@ FileCreateDir,%Install%
     FileInstall,img\1.png,%Install%\img\1.png,1
     FileInstall,img\2.png,%Install%\img\2.png,1
     FileInstall,img\3.png,%Install%\img\3.png,1
+    FileInstall,img\4.png,%Install%\img\4.png,1
 ; Does ProctorScript.ini even exist?
 IfNotExist,%INI%
 { FileCopy,%Install%\%INI%,%A_ScriptDir%
