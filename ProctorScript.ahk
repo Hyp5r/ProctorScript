@@ -31,7 +31,7 @@ Launcher:
   Gui,Launcher:Font,,
   Gui,Launcher:Font,CBlack S12 Q5,Calibri
   Gui,Launcher:Add,Edit,X16 Y128 W445 vName,
-  Gui,Launcher:Add,ListBox,X16 Y212 W445 H200 vOptions AltSubmit Choose1,%LA_Option1Title%|%LA_Option2Title%|%LA_Option3Title%|%LA_Option4Title%|%LA_Option5Title%|%LA_Option6Title%|%LA_Option7Title%|%LA_Option8Title%|%LA_Option9Title%|%LA_Option10Title%|
+  Gui,Launcher:Add,ListBox,X16 Y212 W445 R10 vOptions AltSubmit Choose1,%LA_Option1Title%|%LA_Option2Title%|%LA_Option3Title%|%LA_Option4Title%|%LA_Option5Title%|%LA_Option6Title%|%LA_Option7Title%|%LA_Option8Title%|%LA_Option9Title%|%LA_Option10Title%
   Gui,Launcher:Add,Button,X16 Y416 W445 Default gSubmit,Let's Go!
   Gui,Launcher:Show,H480 W477,
   Gui,Launcher:+AlwaysOnTop -SysMenu -MinimizeBox
@@ -44,17 +44,17 @@ Submit:
     { MsgBox,4112,%ScriptName%,Your name must be entered before you can continue.
 	  Return
 	  }
-  If Options =
-    { MsgBox,4112,%ScriptName%,An option must be selected before you can continue.
-      Return
-      }	  
-  Gui,Launcher:Destroy
-  Gui,ConsentBG:Destroy
   Loop,parse,Options,`,
   { LaunchTitle := % LA_Option%A_LoopField%Title
     LaunchLink := % LA_Option%A_LoopField%Link
 	LaunchLogoff := % LA_Option%A_LoopField%Logoff
 	}
+  If LaunchTitle = 
+    { MsgBox,4112,%ScriptName%,A legitimate option must be selected before you can continue.
+      Return
+      }
+  Gui,Launcher:Destroy
+  Gui,ConsentBG:Destroy
   If (LaunchLink="Resolution Change Launcher")
     Gosub,Resolution_Change_Launcher
   If (LaunchLink="0" or LaunchLink="")
