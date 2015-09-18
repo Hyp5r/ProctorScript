@@ -6,17 +6,23 @@ ConsentBG:
   Gui,ConsentBG:Show,X0 Y0 W%VirtualScreenWidth% H%VirtualScreenHeight%,ConsentBG
   WinSet,Transparent,220,ConsentBG
   }
-Consent:
-{ Gui,Consent:Color,FFFFFF
-  Gui,Consent:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\0.png
-  Gui,Consent:Add,Picture,X0 Y459 W900 H80 Center,%Install%\img\0.png
-  Gui,Consent:Font,cWhite s26,Calibri Light
-  Gui,Consent:Add,Text,X32 Y18 +BackgroundTrans,%CS_Title%
-  Gui,Consent:Font,cBlack s10,Segoe UI
-  Gui,Consent:Add,Text,H344 W736 X32 Y96 +BackgroundTrans,%CS_Content%
-  Gui,Consent:Add,Button,X32 Y467 H32 Default gLauncher,I Agree
-  Gui,Consent:Add,Button,X96 Y467 H32 gDisagree,I Disagree
-  Gui,Consent:Show,H480 W800,%Title%
-  Gui,Consent:+AlwaysOnTop -Caption +Border +Owner
-  Return
+If (CS_Enabled="1" or CS_Enabled="Y" or CS_Enabled="Yes")
+{ Consent:
+  { Gui,Consent:Add,StatusBar,,%LA_StatusBar% - %Version%
+    Gui,Consent:Add,Picture,X0 Y0 W900 H80 Center,%Install%\img\cs_title.png
+    Gui,Consent:Add,Picture,X0 Y80 H40 W900,%Install%\img\cs_header.png
+    Gui,Consent:Add,Picture,X0 Y80 H5 W900,%Install%\img\cs_shadow.png
+    Gui,Consent:Font,CWhite S20,Segoe UI
+    Gui,Consent:Add,Text,X16 Y18 +BackgroundTrans,%CS_Title%
+    Gui,Consent:Font,CWhite S12 Q5 WBold,Segoe UI
+    Gui,Consent:Add,Text,X16 Y90 +BackgroundTrans,PLEASE READ THE FOLLOWING
+    Gui,Consent:Font,,
+    Gui,Consent:Font,cBlack s10,Segoe UI
+    Gui,Consent:Add,Edit,H212 W445 X16 Y128 R16 ReadOnly +BackgroundTrans,%CS_Content%
+    Gui,Consent:Add,Button,X16 Y416 W300 Default gLauncher,I Agree
+    Gui,Consent:Add,Button,X361 Y416 W100 gDisagree,I Disagree
+    Gui,Consent:Show,H480 W477,%Title%
+    Gui,Consent:+AlwaysOnTop -SysMenu
+    Return
+    }
   }
