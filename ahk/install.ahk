@@ -20,7 +20,7 @@ FileCreateDir,%Install%
 ; Does ProctorScript.ini even exist?
 IfNotExist,%INI%
 { FileCopy,%Install%\%INI%,%A_ScriptDir%
-  MsgBox,4160,Welcome to ProctorScript!,Since this seems to be your first time using the script, an INI file has been placed in the directory where you ran the script.  This INI contains everything that the program needs to run successfully.  If you need help using the script`, please email wquinn@outlook.com or find Hyperdaemon on GitHub!  Thanks for trying it out!`n`nProctorScript %Version%.
+  MsgBox,4160,Welcome to %ScriptName%!,Since this seems to be your first time using the script, an INI file has been placed in the directory where you ran the script.  This INI contains everything that the program needs to run successfully.  If you need help using the script`, please email wquinn@outlook.com or find Hyperdaemon on GitHub!  Thanks for trying it out!`n`n%ScriptName% %Version%.
   ExitApp
   }
 ; Log
