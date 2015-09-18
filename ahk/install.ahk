@@ -27,6 +27,7 @@ IfNotExist,%INI%
 IniRead,EnableLog,%INI%,Log,EnableLog
 IniRead,LogFile,%INI%,Log,LogFile
 ; Consent
+IniRead,CS_Enabled,%INI%,Consent,Enabled
 IniRead,CS_Title,%INI%,Consent,Title
 IniRead,CS_Content,%INI%,Consent,Content
 Loop
