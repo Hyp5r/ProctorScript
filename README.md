@@ -38,6 +38,18 @@ The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons
 Changelog
 ---------
 ```
+2.0.0
+  ! Massive amounts of code cleanup!
+  ! New UI, inspired by Modern UI and Material Design.
+  + ADD: Option to turn off Consent via the INI file.
+  + ADD: Three more options can be populated in the INI file.
+  * MODIFY: The INI file no longer reads the Enable switches, those can be safely removed.
+  * MODIFY: The Consent window now scrolls text in the INI, no worries about overflowing past the window now.
+  * MODIFY: -skipconsent now has a very smooth transition, no more flashing Consent window.
+  * MODIFY: 200+ lines of script removed and consolidated, much faster launching of apps.
+  * MODIFY: ConsentBG now covers multi-monitor setups.
+  - REMOVE: No more custom 250x250 image, sorry!
+
 1.0.0
   ! More code cleanup.
   ! All third-party references removed.

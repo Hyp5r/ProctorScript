@@ -11,7 +11,8 @@ EnvGet,Tmp,Tmp
 EnvGet,WinDir,WinDir
 ; Script Variables
 Install = %A_MyDocuments%\c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
-Version = 1.0.0
+ScriptName = ProctorScript
+Version = 2.0.0
 ; INI Location
 INI = ProctorScript.ini
 ; Possible Error Messages

@@ -18,9 +18,7 @@ Loop,%0%
     Return
     }
   If switch = -skipconsent
-  { Gosub,ConsentBG
-    Gosub,Launcher
-    Return
+  { CS_Enabled = 0
     }
   Else
   { MsgBox,4112,ProctorScript,You've passed a switch that doesn't exist.
