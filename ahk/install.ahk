@@ -12,11 +12,12 @@ FileCreateDir,%Install%
     FileInstall,ahk\var.ahk,%Install%\ahk\var.ahk,1
   FileCreateDir,%Install%\img
     FileInstall,img\icon.ico,%Install%\img\icon.ico,1
-    FileInstall,img\0.png,%Install%\img\0.png,1
-    FileInstall,img\1.png,%Install%\img\1.png,1
-    FileInstall,img\2.png,%Install%\img\2.png,1
-    FileInstall,img\3.png,%Install%\img\3.png,1
-    FileInstall,img\4.png,%Install%\img\4.png,1
+    FileInstall,img\cs_header.png,%Install%\img\cs_header.png,1
+    FileInstall,img\cs_shadow.png,%Install%\img\cs_shadow.png,1
+    FileInstall,img\cs_title.png,%Install%\img\cs_title.png,1
+    FileInstall,img\launcher_header.png,%Install%\img\launcher_header.png,1
+    FileInstall,img\launcher_shadow.png,%Install%\img\launcher_shadow.png,1
+    FileInstall,img\launcher_title.png,%Install%\img\launcher_title.png,1
 ; Does ProctorScript.ini even exist?
 IfNotExist,%INI%
 { FileCopy,%Install%\%INI%,%A_ScriptDir%
