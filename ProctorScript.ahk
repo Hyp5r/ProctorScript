@@ -87,7 +87,7 @@ Disagree:
 Resolution_Change_Launcher:
   #Include ahk\reschange.ahk
 Log:
-{ FileAppend,%FirstName%`,%LastName%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
+{ FileAppend,%Name%`,%Date%`,%Time%`,%A_ComputerName%`,%A_OSVersion%`,%A_IPAddress1%`,%A_IPAddress2%`,%A_IPAddress3%`,%A_IPAddress4%`,,%LogFile%
   Return
   }
 ConsentBGGuiClose:
