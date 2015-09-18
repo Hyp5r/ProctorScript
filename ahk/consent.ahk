@@ -1,7 +1,9 @@
 ConsentBG:
-{ Gui,ConsentBG:Color,000000
+{ Sysget,VirtualScreenWidth,78
+  Sysget,VirtualScreenHeight,79
+  Gui,ConsentBG:Color,000000
   Gui,ConsentBG:-Caption +ToolWindow
-  Gui,ConsentBG:Show,Maximize,ConsentBG
+  Gui,ConsentBG:Show,X0 Y0 W%VirtualScreenWidth% H%VirtualScreenHeight%,ConsentBG
   WinSet,Transparent,220,ConsentBG
   }
 Consent:
