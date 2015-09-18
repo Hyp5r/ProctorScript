@@ -105,7 +105,6 @@ Logoff:
   Gui,Consent:Destroy
   Gui,Launcher:Destroy
   FileRemoveDir,%Install%,1
-  ExitApp
   Shutdown,0
   }
 ; Hotkeys Disabled

@@ -38,6 +38,9 @@ The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons
 Changelog
 ---------
 ```
+2.0.1
+  * MODIFY: Logoff subroutine was configured incorrectly and wouldn't log the user off.
+
 2.0.0
   ! Massive amounts of code cleanup!
   ! New UI, inspired by Modern UI and Material Design.
