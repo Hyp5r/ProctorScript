@@ -51,44 +51,36 @@ Submit:
   Gui,Launcher:Destroy
   Gui,ConsentBG:Destroy
   Loop,parse,Options,`,
-  { LaunchTitle = % LA_Option%A_LoopField%Title
-    LaunchLink = % LA_Option%A_LoopField%Link
-	LaunchLogoff = % LA_Option%A_LoopField%Logoff
-	{ MsgBox,%LaunchTitle%
-	  MsgBox,%LaunchLink%
-	  MsgBox,%LaunchLogoff%
-	  }
+  { LaunchTitle := % LA_Option%A_LoopField%Title
+    LaunchLink := % LA_Option%A_LoopField%Link
+	LaunchLogoff := % LA_Option%A_LoopField%Logoff
 	}
-/*
-  If Options = %LA_Option0Title%
-  { If LA_Option0Link=Resolution Change Launcher
-      Gosub,Resolution_Change_Launcher
-    If LA_Option0Link=0
-      Gosub,Exit
-    Else
-    { If EnableLog=1
-      { Gosub,Log
-        FileAppend,%LA_Option0Title%`,`n,%LogFile%
-        }
-      If Option0Logoff=1
-      { RunWait,%LA_Option0Link%,,UseErrorLevel
-        If ErrorLevel=ERROR
-        { MsgBox,4112,Error,An unexpected error occurred when launching the application.
-          Gosub,Exit
-          }
-        Gosub,Logoff
-        }
-      Else
-      { Run %LA_Option0Link%,,UseErrorLevel
-        If ErrorLevel=ERROR
-        { MsgBox,4112,Error,An unexpected error occurred when launching the application.
-          Gosub,Exit
-          }
+  If (LaunchLink="Resolution Change Launcher")
+    Gosub,Resolution_Change_Launcher
+  If (LaunchLink="0")
+    Gosub,Exit
+  Else
+  { If EnableLog=1
+    { Gosub,Log
+      FileAppend,%LaunchTitle%`,`n,%LogFile%
+      }
+    If (LaunchLogoff="1")
+    { RunWait,%LaunchLink%,,UseErrorLevel
+      If ErrorLevel=ERROR
+      { MsgBox,4112,Error,An unexpected error occurred when launching the application.
         Gosub,Exit
         }
+      Gosub,Logoff
+      }
+    Else
+    { Run %LaunchLink%,,UseErrorLevel
+      If ErrorLevel=ERROR
+      { MsgBox,4112,Error,An unexpected error occurred when launching the application.
+        Gosub,Exit
+        }
+      Gosub,Exit
       }
     }
-	*/
   }
 Disagree:
 { Suspend,On
