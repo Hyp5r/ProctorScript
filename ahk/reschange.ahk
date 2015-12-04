@@ -2,6 +2,12 @@ If EnableLog=1
   { Gosub,Log
     FileAppend,Resolution Change Launcher`,`n,%LogFile%
     }
+; Wait on Explorer.exe to be running
+Process,Wait,Explorer.exe,30
+If ErrorLevel
+{ MsgBox,4112,Error,An unexpected error occurred while changing the screen resolution.
+  Gosub,Exit
+  }
 ; First Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_ChangeXRes% /y:%RCL_ChangeYRes%
 Sleep,2500
