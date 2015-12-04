@@ -1,6 +1,6 @@
 If EnableLog=1
   { Gosub,Log
-    FileAppend,%LA_Option6Title%`,`n,%LogFile%
+    FileAppend,Resolution Change Launcher`,`n,%LogFile%
     }
 ; First Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_ChangeXRes% /y:%RCL_ChangeYRes%
