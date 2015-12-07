@@ -3,8 +3,9 @@ If EnableLog=1
     FileAppend,Resolution Change Launcher`,`n,%LogFile%
     }
 ; Wait on Explorer.exe to be running
-Process,Wait,Explorer.exe,30
-If ErrorLevel
+Process,Wait,Explorer.exe,60
+Explorer=%ErrorLevel%
+If Explorer=0
 { MsgBox,4112,Error,An unexpected error occurred while changing the screen resolution.
   Gosub,Exit
   }
