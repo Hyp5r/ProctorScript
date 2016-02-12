@@ -7,7 +7,7 @@ MsgBox,4132,Resolution Change,Your computer's resolution will change to %RCL_Cha
 If MsgBox, No
   Gosub,Logoff
 ; Give some coffee to keep the computer alive
-SetTimer,Caffiene,300000
+SetTimer,Caffiene,60000
 ; First Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_ChangeXRes% /y:%RCL_ChangeYRes%
 Sleep,2500
@@ -27,5 +27,6 @@ If RCL_Logoff=1
 Gosub,Exit
 
 Caffiene:
-{ MouseMove,0,0,0,R
+{ MouseMove,5,0,0,R
+  MouseMove,-5,0,0,R
   }

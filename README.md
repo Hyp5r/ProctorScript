@@ -38,9 +38,12 @@ The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons
 Changelog
 ---------
 ```
+2.0.4 (February 12, 2016)
+  * MODIFY: Coffee script didn't work properly, mouse movement was added.
+
 2.0.3 (February 12, 2016)
-  * ADD: Disable Win+Tab hotkey.
-  * ADD: Reslauncher now drinks coffee while running.
+  + ADD: Disable Win+Tab hotkey.
+  + ADD: Reslauncher now drinks coffee while running.
     (Computer will not go to sleep unless sleep occurs within less than 5 minutes.)
   ^ DEV: AutoHotkey version updated to 1.1.23.00 Unicode 32-bit  
 
