@@ -6,6 +6,8 @@ If EnableLog=1
 MsgBox,4132,Resolution Change,Your computer's resolution will change to %RCL_ChangeXRes% by %RCL_ChangeYRes%.  Press Yes to Continue, or press No to log out.
 If MsgBox, No
   Gosub,Logoff
+; Give some coffee to keep the computer alive
+SetTimer,Caffiene,300000
 ; First Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_ChangeXRes% /y:%RCL_ChangeYRes%
 Sleep,2500
@@ -18,6 +20,12 @@ RunWait,%RCL_Link%,,UseErrorLevel
 ; Second Resolution Change
 RunWait,%Install%\bin\qres.exe /x:%RCL_OriginalXRes% /y:%RCL_OriginalYRes%
 Sleep,2500
+; Stop giving the computer coffee
+SetTimer,Caffiene,Off
 If RCL_Logoff=1
   Gosub,Logoff
 Gosub,Exit
+
+Caffiene:
+{ MouseMove,0,0,0,R
+  }

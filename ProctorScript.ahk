@@ -1,4 +1,4 @@
-; AHK VERSION: Lexikos 1.1.22.06 Unicode 32-bit
+; AHK VERSION: Lexikos 1.1.23.00 Unicode 32-bit
 ; AUTHOR: William Quinn (wquinn@outlook.com)
 ; TITLE: ProctorScript
 ; UUID: c5f530c5-8dfe-4f08-bb49-d5ef43adbc92
@@ -11,7 +11,7 @@
 
 ; Show icon in system tray, disable tray menu.
 Menu,Tray,NoStandard
-Launcher: 
+Launcher:
 { If EnableLog=1
     FileAppend,1`,,%LogFile%
   Gui,Launcher:Add,StatusBar,,%LA_StatusBar% - %Version%
@@ -43,9 +43,9 @@ Submit:
   Loop,parse,Options,`,
   { LaunchTitle := % LA_Option%A_LoopField%Title
     LaunchLink := % LA_Option%A_LoopField%Link
-	LaunchLogoff := % LA_Option%A_LoopField%Logoff
+  	LaunchLogoff := % LA_Option%A_LoopField%Logoff
 	}
-  If LaunchTitle = 
+  If LaunchTitle =
     { MsgBox,4112,%ScriptName%,A legitimate option must be selected before you can continue.
       Return
       }
@@ -110,3 +110,4 @@ Logoff:
 ; Hotkeys Disabled
 !F4::return
 !Tab::return
+#Tab::return

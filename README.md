@@ -38,6 +38,15 @@ The ProctorScript icon was created by Vecteezy (https://www.iconfinder.com/icons
 Changelog
 ---------
 ```
+2.0.3 (February 12, 2016)
+  * ADD: Disable Win+Tab hotkey.
+  * ADD: Reslauncher now drinks coffee while running.
+    (Computer will not go to sleep unless sleep occurs within less than 5 minutes.)
+  ^ DEV: AutoHotkey version updated to 1.1.23.00 Unicode 32-bit  
+
+2.0.2
+  * MODIFY: Changed the reslauncher wait command to a dialog command.  User must confirm that the resolution will change or can choose to log out.
+
 2.0.1
   * MODIFY: Logoff subroutine was configured incorrectly and wouldn't log the user off.
 
