@@ -1,3 +1,4 @@
+#Persistent
 If EnableLog=1
   { Gosub,Log
     FileAppend,Resolution Change Launcher`,`n,%LogFile%
@@ -27,6 +28,6 @@ If RCL_Logoff=1
 Gosub,Exit
 
 Caffiene:
-{ MouseMove,5,0,0,R
-  MouseMove,-5,0,0,R
+{ SendInput,{F15}
+  Return
   }
