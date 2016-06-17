@@ -82,7 +82,7 @@ Disagree:
 { Suspend,On
   Gui,Consent:Destroy
   MsgBox,4112,%Title%,You will be logged out of the system.
-  Goto,Logoff
+  Gosub,Logoff
   }
 Resolution_Change_Launcher:
   #Include ahk\reschange.ahk
